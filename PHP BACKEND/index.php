@@ -18,6 +18,15 @@ header("Content-Type: application/json; charset=UTF-8");
     echo json_encode($invalidRequest);
     exit;
 }
+if($_POST['action'] === 'exampleHTTPRequest'){
+    $command = "SELECT * FROM example_products";
+    $commandExecute = $conn->query($command);
+    $data = array();
+    while($dataRow = mysqli_fetch_assoc($commandExecute)){
+        $data[] = $dataRow;
+    }
+    echo json_encode($data);
+}
  if(isset($_POST['requestSession'])){
     try {
         $sId = mysqli_real_escape_string($conn, $_POST['requestSession']);
@@ -104,15 +113,6 @@ header("Content-Type: application/json; charset=UTF-8");
                 $invalidUsername = array("Error" => "Please enter username.");
                  echo json_encode($invalidUsername);
                     }
-                }
-                else if($_POST['action'] === 'exampleHTTPRequest'){
-                    $command = "SELECT * FROM example_products";
-                    $commandExecute = $conn->query($command);
-                    $data = array();
-                    while($dataRow = mysqli_fetch_assoc($commandExecute)){
-                        $data[] = $dataRow;
-                    }
-                    echo json_encode($data);
                 }
             }
             else{

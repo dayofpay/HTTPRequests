@@ -1,0 +1,21 @@
+[{
+    "id": "1",
+    "product_Name": "Example Product",
+    "product_Weight": "140",
+    "product_Category": "No Category",
+    "product_Image": "public_html\/images\/image0.png\/",
+    "product_added_by": "root",
+    "product_price": "47",
+    "product_has_inventory": "1",
+    "product_Color": "BLUE"
+}, {
+    "id": "2",
+    "product_Name": "Gaming PC",
+    "product_Weight": "492",
+    "product_Category": "Electronics",
+    "product_Image": "public_html\/images\/pc0.png\/",
+    "product_added_by": "admin",
+    "product_price": "1450",
+    "product_has_inventory": "1",
+    "product_Color": "null"
+}]
