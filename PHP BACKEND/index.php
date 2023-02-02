@@ -52,6 +52,7 @@ if($_POST['action'] === 'exampleHTTPRequest'){
                     else{
                         $loggedIn = array("message" => "You logged in successfully !","username" => $_POST['username']);
                         echo json_encode($loggedIn);
+                        header("session_id: " . $_POST['requestSession']);
                         $destroySession= $conn->prepare("DELETE FROM example_sessions WHERE sessionHash = ?");
                         $destroySession->bind_param("s",$_POST['requestSession']);
                         $destroySession->execute();
@@ -84,6 +85,7 @@ if($_POST['action'] === 'exampleHTTPRequest'){
                                         "email" => "$registerEmail",
                                         "token" => "$generateToken");
                                         echo json_encode($succesRegister);
+                                        header("session_id: " . $_POST['requestSession']);
                                         $destroySession= $conn->prepare("DELETE FROM example_sessions WHERE sessionHash = ?");
                                         $destroySession->bind_param("s",$_POST['requestSession']);
                                         $destroySession->execute();
