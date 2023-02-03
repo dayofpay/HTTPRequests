@@ -12,6 +12,12 @@ if ($conn->connect_error) {
 // SETUP HEADERS
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
+
+if (empty($_POST) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $noPostData = array("Error" => "Please enter post data.");
+    echo json_encode($noPostData);
+  }
+  
  // CHECK VALID REQUEST SESSION
  if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $invalidRequest = array("Error" => "You cant send GET requests to this URL");
