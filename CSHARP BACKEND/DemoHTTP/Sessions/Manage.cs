@@ -52,5 +52,20 @@ namespace DemoHTTP.Sessions
                 Console.WriteLine("There was an error while trying to connect the database ! \r\n Message: " + error.Message);
             }
         }
+        public static void DeleteSession(string sessionId)
+        {
+            if (connected)
+            {
+                MySqlCommand deleteSession = new MySqlCommand("DELETE FROM example_sessions WHERE sessionHash = @session", connection); // Prepare the SQL Statement
+                deleteSession.Parameters.AddWithValue("@session", sessionId); // Add session parameter
+                deleteSession.ExecuteScalar(); // Execute command
+            }
+            else
+            {
+                Console.WriteLine("You are not connected to the database !");
+                Console.WriteLine("Trying to re-connect ...");
+                connection.Open();
+            }
+        }
     }
 }
