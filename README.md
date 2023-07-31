@@ -86,3 +86,7 @@ Here is an example how to destroy session using PHP
 # ⚠ If you are going to use the sample C# code make sure it is obfuscated otherwise you risk exposing sensitive data from the code 
 
 # ⚠ WARNING : This documentation is not finished yet
+# Requirements
+
+- .NET >= 3.5 [ ! For the demo application !]
+- PHP <=7.4
