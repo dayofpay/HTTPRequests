@@ -1,12 +1,12 @@
 <?php
 
-$servername = "79.98.104.12";
+$servername = "";
 
-$username = "vdevseu_root";
+$username = "";
 
-$password = 'i$C8A=].WccETRT';
+$password = '';
 
-$dbname = "vdevseu_demoHTTPLogin";
+$dbname = "";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
